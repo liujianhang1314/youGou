@@ -1,0 +1,35 @@
+{
+	"data":{
+		"classify":[
+			{
+				"first":"http://i1.ygimg.cn/pics/mobile/homepage/2017/02/1487210024516.jpg",
+				"title":"热门品牌",
+				"second":[
+				{
+					"img1":"http://i1.ygimg.cn/pics/mobile/homepage/2017/02/1487210024516.jpg",
+					"text":"百丽"
+				},
+				{
+					"img1":"http://i1.ygimg.cn/pics/mobile/homepage/2017/02/1487210037675.jpg",
+					"text":"天美意"
+				}
+						]
+			},
+			{
+				"first":"http://i1.ygimg.cn/pics/mobile/homepage/2017/07/1500867044264.jpg",
+				"title":"热门",
+				"second":[
+				{
+					"img1":"http://i1.ygimg.cn/pics/mobile/homepage/2017/02/1487210024516.jpg",
+					"text":"百丽"
+				},
+				{
+					"img1":"http://i1.ygimg.cn/pics/mobile/homepage/2017/02/1487210037675.jpg",
+					"text":"天美意"
+				}
+						]
+			}
+
+		]
+			}
+}
