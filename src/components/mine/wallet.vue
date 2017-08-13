@@ -18,7 +18,7 @@
          <p>积分</p>
        </li>
        <li>
-          <img src="http://m.yougou.com/images/myYG/dividend.png" alt="">
+          <img src="http://m.yougou.com/images/myYG/dividend.png" @click="a">
          <p>分享购</p>
        </li>
      </ul>
@@ -31,6 +31,11 @@ export default {
   data () {
     return {
     
+    }
+  },
+  methods:{
+    a(){
+      this.$router.push('/aaa')
     }
   }
 }

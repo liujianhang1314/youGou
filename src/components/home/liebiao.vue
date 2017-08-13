@@ -35,7 +35,7 @@ created(){
     self.brr=res.data.womenShoes
     console.log(self.brr)
   })
-
+ 
 }
 ,
 mounted(){
@@ -89,7 +89,7 @@ methods:{
    buy(obj,index){
     //跳转路由传参数
     sessionStorage.setItem("uidd",obj.id)
-
+ 
     this.$router.push({path:"/buypage", query:{id:index}})
    }        
 

@@ -9,16 +9,18 @@
             <img :src="obj.img" class="imgs">
           </div>
           <div class="jiage">
-            <p class="prices">￥{{obj.price}} <br><span>颜色：{{obj.color}}</span><br><span>尺码：{{obj.size}}</span></p>
+            <p class="prices">￥{{obj.price}}</p>
             <div class="caozuo">
               <div class="jian" @click="obj.num<2 ?obj.num=1:obj.num--,zongjia()">-</div>
             <input type="num" class="num" v-model="obj.num" >
             <div class="jia" @click="obj.num++,zongjia()">+</div>
             </div>
+           
           </div>
           
           <img src="../assets/del.png" class="del" @click="del(obj.id,index)">
-        </div>    
+        </div> 
+         <p class="cols"><span>颜色：{{obj.color}}</span><br><span>尺码：{{obj.size}}</span></p>   
       </div>
       <div class="quanxuan">
         <p>
@@ -106,6 +108,7 @@ export default {
         this.gai(this.goodsArr);
          localStorage.removeItem(localStorage[index])
          this.zongjia()
+         sessionStorage.removeItem("suns")
     },
     //总价
     zongjia(){
@@ -168,7 +171,6 @@ export default {
   width: 100%;
   border-bottom:1px solid #ccc;
   margin-top: 1rem;
-  margin-bottom: 5rem;
 }
 .goodsImg
 {
@@ -183,7 +185,7 @@ export default {
 .jiage
 {
   width: 50%;
-
+  height: 3rem;
   display: flex;
   margin-top: 1rem;
   justify-content:space-around;
@@ -248,8 +250,8 @@ export default {
 {
   width: 3rem;
   height: 3rem;
-  margin-left:10rem;
-  margin-top: 2rem; 
+  float: right;
+  margin-top: 2rem;
 }
 .prices
 {
@@ -276,5 +278,9 @@ export default {
   color: white;
   background-color: red;
   text-align: center;
+}
+.cols
+{
+  margin-left: 35%;
 }
 </style>

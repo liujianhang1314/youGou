@@ -54,7 +54,7 @@ mounted(){
                     } else {
                         document.body.scrollTop = map[location.hash];
                     }
-                }, 200);
+                }, 20);
             }
         }
          window.addEventListener('scroll', this.handleScroll);

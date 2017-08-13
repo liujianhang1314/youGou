@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tabbar from '@/components/Tabbar'
+
 import Home from '@/components/Home'
 import Classify from '@/components/Classify'
 
@@ -15,19 +15,24 @@ import List from '@/components/home/List'
 
 import Buypage from '@/components/home/Buypage'
 import mydingdan from '@/components/mine/mydingdan'
+import aaa from '@/components/home/aaa'
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      // name: 'tabbar',
-      component: Tabbar,
-       redirect:'/home',
-      children:[
- 
+    // {
+    //   path: '/',
+    //   // name: 'tabbar',
+    //   component: Tabbar,
+    //    redirect:'/home',
+    //   children:[
+ {
+                path:'/home',
+                name:'home',
+                component:Home
+              },
               {
-              	path:'/home',
+              	path:'/',
               	name:'home',
               	component:Home
               },
@@ -45,8 +50,8 @@ export default new Router({
               	path:'/mine',
               	name:'mine',
               	component:Mine
-              }
-              ]
+              // }
+              // ]
     },
     {
       path:'/juan',
@@ -73,10 +78,7 @@ export default new Router({
       name:'mydingdan',
      component:mydingdan
       },
-      {
-        path:"*",
-        redirect:"/index/home"
-      },
+  
               
               {
                 path:'/denglu',
@@ -87,6 +89,11 @@ export default new Router({
       path:'/login',
       name:'login',
       component:Login
+    },
+    {
+      path:'/aaa',
+      name:aaa,
+      component:aaa
     }
   ]
 })

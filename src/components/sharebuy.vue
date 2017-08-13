@@ -4,6 +4,7 @@
     <shareimg></shareimg>
     <upcarousel></upcarousel>
     <teach></teach>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ import top from '@/components/sharebuy/top'
 import shareimg from '@/components/sharebuy/shareimg'
 import upcarousel from '@/components/sharebuy/upcarousel'
 import teach from '@/components/sharebuy/teach'
-//瀵煎嚭缁勪欢/瀵硅薄锛屽悕瀛楁槸home
+import tabBar from '@/components/tabBar'
 export default {
   name: 'sharebuy',
   data () {
@@ -24,7 +25,8 @@ export default {
     top,
     shareimg,
     upcarousel,
-    teach
+    teach,
+    tabBar
    }
 }
 </script>

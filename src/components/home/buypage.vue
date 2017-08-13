@@ -1,7 +1,7 @@
 <template>
    <div class="box">
      <div class="search-box"  >
-        <img src='http://m.yougou.com/images/new-back.png' class='logo' @click="backs"/>
+        <a href="javascript:history.go(-1)"><img src='http://m.yougou.com/images/new-back.png' class='logo'/></a>
         <p>商品详情</p>
         <img src='http://m.yougou.com/images/ico-menu.png' class="message" />
      </div>
@@ -12,7 +12,7 @@
      </div>
       <div class="btns">
               <button @click=del()>-</button>
-              <input type="text" v-model="count">
+              <input type="text" :value='count'>
               <button  @click=add()>+</button>
       </div>
       <div class="changeSize" @click="changeSize()">
@@ -42,12 +42,12 @@
           <p><span>￥{{jiaGe}}</span></p>
         </div>
         <div class="color">
-          <p v-for="(c,index) in colors" @click="col(c,index)">{{c}}</p>
+          <p v-for="(c,index) in colors" @click="col(c,index)" class="colorS">{{c}}</p>
         </div>
         <div class="size">
           <p>尺码：</p>
           <ul>
-            <li v-for="(a,index) in sizeNum" @click="sizeNums(a,index)">{{a}}</li>
+            <li v-for="(a,index) in sizeNum" @click="sizeNums(a,index)" class="sizeS">{{a}}</li>
           </ul>
         </div> 
      </div>
@@ -68,6 +68,8 @@ export default {
       msg:'',
       number:true,
       count:1,
+      nums:1,
+      sun:0,
       obj1:{},
       arr1:[],
       obj2:{},
@@ -95,12 +97,14 @@ mounted(){
   this.number=this.$route.query.id;
 },
 methods:{
-  backs(){
-    this.$router.back(-1)
-  },
+  // backs(){
+  //   this..back(-1)
+  // },
   join(){
-     var that = this 
-        this.uidd =sessionStorage.getItem("uidd")
+     var that = this;
+     this.sun = this.count
+        this.isHide=false;
+        this.uidd =sessionStorage.getItem("uidd");
         // 通过商品ID找到对应的对象
         // this.obj=this.$data.jian[this.uidd-1]
         // 用户Id
@@ -133,7 +137,6 @@ methods:{
               }
               this.arr1.push(this.obj2);  
               localStorage.setItem("person", JSON.stringify(this.obj1))
-              console.log(localStorage)
         }
         axios.get("http://localhost:6500/bai/"+this.uid).then((res)=>{
      
@@ -146,12 +149,13 @@ methods:{
           else{
             // 将json字符串转换为对象
             this.obj2=JSON.parse(res.data.zhan);
-  
-            
-            this.addArr()
+             this.addArr()
+            // this.obj2['02'].num=this.obj2['02'].num+this.count;
+            this.sun=sessionStorage.getItem("suns")/1+this.count/1;
+            sessionStorage.setItem("suns",this.sun);
+
              // 将接收的值转成字符串
             this.arrdataStr=JSON.stringify(this.obj2)   //obj2==arrdata
-         
           }
 
           //修改  如果内容修改了将内容重新传到后台
@@ -181,7 +185,7 @@ methods:{
         "img":this.arr2.src,
         "title":this.arr2.title,
         "price":this.arr2.nowPrice,
-        "num":this.count,
+        "num":this.count/1+sessionStorage.getItem("suns")/1,
         "id":this.arr2.id,
         "size":this.sizess,
         "color":this.colss,
@@ -194,11 +198,27 @@ methods:{
   changeSize(){
     this.isHide=true
   },
-  sizeNums(a,e){
-      this.sizess=a
+  sizeNums(a,index){
+      this.sizess=a;
+      var sizeS=document.querySelectorAll(".sizeS");
+    for(var i=0;i<sizeS.length;i++){
+      if(index==i){
+          sizeS[i].style.color="red"
+      }else{
+        sizeS[i].style.color="black"
+      }
+    }
   },
   col(c,index){
     this.colss=c
+    var colorS=document.querySelectorAll(".colorS");
+    for(var i=0;i<colorS.length;i++){
+      if(index==i){
+          colorS[i].style.color="red"
+      }else{
+        colorS[i].style.color="black"
+      }
+    }
   }
 }
 }

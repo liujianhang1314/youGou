@@ -5,6 +5,7 @@
    <discount></discount>
    <drag></drag>
    <bottom></bottom>
+   <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -14,8 +15,10 @@ import carousel from "@/components/home/carousel"
 import discount from "@/components/home/discount"
 import drag from '@/components/home/drag'
 import bottom from '@/components/home/bottom'
+import tabBar from '@/components/tabBar'
+
 export default {
-  name: 'tabbar',
+  name: 'home',
   data () {
     return {
     
@@ -25,7 +28,8 @@ export default {
     carousel,
     discount,
     drag,
-    bottom
+    bottom,
+    tabBar
   }
 }
 </script>

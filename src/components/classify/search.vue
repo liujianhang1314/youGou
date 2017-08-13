@@ -46,7 +46,7 @@ export default {
   z-index: 2;
   display:flex;
   justify-content: space-between;
-  background:#ccc;
+  background:#f8f8f8;
 }
 .search
 {

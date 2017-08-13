@@ -31,7 +31,7 @@ export default {
 {
   width: 100%;
   height: 4.4rem;
-  background:#ccc;
+  background:#f8f8f8;
   display: flex;
   justify-content:space-between;
 }

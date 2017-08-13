@@ -6,6 +6,7 @@
     <wallet></wallet>
     <shoes></shoes>
     <bottom></bottom>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import dingdan from "@/components/mine/dingdan"
 import wallet from "@/components/mine/wallet"
 import shoes from "@/components/mine/shoes"
 import bottom from "@/components/mine/bottom"
+import tabBar from "@/components/tabBar"
 export default {
   name: 'mine',
   data () {
@@ -29,7 +31,8 @@ export default {
     dingdan,
     wallet,
     shoes,
-    bottom
+    bottom,
+    tabBar
   }
 }
 </script>
